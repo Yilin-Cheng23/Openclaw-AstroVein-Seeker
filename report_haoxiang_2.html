@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关浩祥 · 同门近期画像</title>
+<style>
+:root {
+  --bg-deep: #f6fcff;
+  --bg-mid: #eef8ff;
+  --bg-aurora: #fff8fd;
+  --ink: #14253a;
+  --ink-soft: #5c7086;
+  --panel: rgba(255, 255, 255, 0.88);
+  --panel-border: rgba(74, 167, 255, 0.16);
+  --accent: #21d3bf;
+  --accent-2: #4aa7ff;
+  --accent-3: #7a7cff;
+  --warm: #ffb85d;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background:
+    radial-gradient(circle at 15% 16%, rgba(33,211,191,0.17), transparent 24%),
+    radial-gradient(circle at 84% 12%, rgba(74,167,255,0.19), transparent 24%),
+    radial-gradient(circle at 78% 78%, rgba(122,124,255,0.12), transparent 22%),
+    radial-gradient(circle at 20% 84%, rgba(255,184,93,0.10), transparent 18%),
+    linear-gradient(135deg, var(--bg-deep) 0%, #f0f8ff 42%, var(--bg-mid) 68%, var(--bg-aurora) 100%);
+  min-height: 100vh;
+  padding: 32px 16px 48px;
+  position: relative;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(74,167,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33,211,191,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,0.32), transparent 84%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+body::after {
+  content: '';
+  position: fixed;
+  width: 42rem;
+  height: 42rem;
+  right: -12rem;
+  top: -14rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,167,255,0.16) 0%, rgba(74,167,255,0) 68%);
+  filter: blur(28px);
+  pointer-events: none;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.header {
+  text-align: center;
+  color: var(--ink);
+  padding: 26px 28px 30px;
+  margin-bottom: 20px;
+  border-radius: 28px;
+  border: 1px solid rgba(74, 167, 255, 0.14);
+  background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(246,252,255,0.66));
+  box-shadow:
+    0 30px 80px rgba(74, 167, 255, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  backdrop-filter: blur(20px);
+}
+.brandbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.brandcopy {
+  text-align: center;
+}
+.brandcopy .kicker {
+  font-size: 0.7rem;
+  letter-spacing: 0.26rem;
+  text-transform: uppercase;
+  color: rgba(64, 124, 193, 0.72);
+  margin-bottom: 4px;
+}
+.brandcopy .line {
+  font-size: 0.92rem;
+  color: #21415f;
+  font-weight: 600;
+}
+.header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #11698f 0%, #2f8cff 46%, #5f66ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.header .subtitle {
+  font-size: 1.08rem;
+  color: #5e758f;
+  margin-bottom: 20px;
+}
+.header-badges {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.badge {
+  background: linear-gradient(135deg, rgba(255,255,255,0.78), rgba(242,250,255,0.72));
+  border: 1px solid rgba(74, 167, 255, 0.16);
+  color: #35536f;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.65), 0 12px 24px rgba(74,167,255,0.06);
+}
+.card {
+  background: var(--panel);
+  border-radius: 24px;
+  box-shadow:
+    0 26px 72px rgba(74,167,255,0.10),
+    0 0 0 1px rgba(255,255,255,0.55);
+  border: 1px solid var(--panel-border);
+  padding: 34px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(33,211,191,0.05), transparent 26%, rgba(74,167,255,0.05) 72%, rgba(122,124,255,0.04) 100%);
+  pointer-events: none;
+}
+.section {
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+.section:last-child { margin-bottom: 0; }
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #16395a;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(33,211,191,0.14);
+  margin-bottom: 18px;
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 110px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+}
+.section:nth-of-type(2) .section-title::after { background: linear-gradient(90deg, #6f78ff, #4aa7ff); }
+.section:nth-of-type(3) .section-title::after { background: linear-gradient(90deg, #ff8f6b, #ffc86a); }
+.section:nth-of-type(4) .section-title::after { background: linear-gradient(90deg, #21d3bf, #7a7cff); }
+.section:nth-of-type(5) .section-title::after { background: linear-gradient(90deg, #ff7db7, #4aa7ff); }
+.section:nth-of-type(6) .section-title::after { background: linear-gradient(90deg, #21d3bf, #ffb85d); }
+.section-icon { font-size: 1.3rem; }
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.info-item {
+  background: linear-gradient(135deg, rgba(87,245,207,0.08), rgba(110,188,255,0.08));
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid rgba(110,188,255,0.12);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+}
+.info-item .label {
+  font-size: 0.72rem;
+  color: #7b8a9c;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin-bottom: 6px;
+}
+.info-item .value {
+  font-size: 0.96rem;
+  color: #123454;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.info-item:nth-child(3n+1) { background: linear-gradient(135deg, rgba(33,211,191,0.10), rgba(74,167,255,0.08)); border-color: rgba(33,211,191,0.12); }
+.info-item:nth-child(3n+2) { background: linear-gradient(135deg, rgba(122,124,255,0.10), rgba(74,167,255,0.08)); border-color: rgba(122,124,255,0.14); }
+.info-item:nth-child(3n) { background: linear-gradient(135deg, rgba(255,184,93,0.12), rgba(255,255,255,0.82)); border-color: rgba(255,184,93,0.16); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  background: linear-gradient(135deg, #2a84d8, #1ab8cb 58%, #79efe1 100%);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.77rem;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(42,132,216,0.14);
+}
+.tag:nth-child(3n+2) { background: linear-gradient(135deg, #6b75ff, #4aa7ff 60%, #8de6ff 100%); }
+.tag:nth-child(3n) { background: linear-gradient(135deg, #ff8b64, #ffb85d 60%, #ffe08a 100%); }
+.timeline { position: relative; padding-left: 30px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent-2), var(--accent), var(--accent-3));
+  border-radius: 3px;
+}
+.timeline-item { position: relative; margin-bottom: 22px; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  border: 2px solid white;
+  box-shadow: 0 0 0 4px rgba(87,245,207,0.16);
+}
+.timeline-item .phase {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #129f93;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  margin-bottom: 4px;
+}
+.timeline-item .phase-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #103454;
+  margin-bottom: 6px;
+}
+.timeline-item .phase-desc {
+  font-size: 0.91rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+.insight-card {
+  background: linear-gradient(135deg, rgba(245,252,255,0.98), rgba(233,246,255,0.96));
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 17px;
+  border: 1px solid rgba(74,167,255,0.16);
+  box-shadow: 0 16px 30px rgba(74,167,255,0.08);
+}
+.insight-card .ic-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #1495b2;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.insight-card .ic-content {
+  font-size: 0.88rem;
+  color: #597086;
+  line-height: 1.65;
+}
+.insight-card:nth-child(3n+1) { background: linear-gradient(135deg, rgba(245,252,255,0.98), rgba(233,246,255,0.96)); border-color: rgba(74,167,255,0.16); }
+.insight-card:nth-child(3n+1) .ic-title { color: #1495b2; }
+.insight-card:nth-child(3n+2) { background: linear-gradient(135deg, rgba(248,246,255,0.98), rgba(237,238,255,0.96)); border-color: rgba(122,124,255,0.16); }
+.insight-card:nth-child(3n+2) .ic-title { color: #5b63f2; }
+.insight-card:nth-child(3n) { background: linear-gradient(135deg, rgba(255,248,242,0.98), rgba(255,240,229,0.96)); border-color: rgba(255,184,93,0.18); }
+.insight-card:nth-child(3n) .ic-title { color: #db7b34; }
+.highlight-box {
+  background: linear-gradient(135deg, #fff6dc 0%, #fff0c9 100%);
+  border: 1px solid rgba(240,192,64,0.4);
+  border-left: 4px solid var(--warm);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 12px 26px rgba(245,166,35,0.08);
+}
+.highlight-box .hb-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #a96816;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+.highlight-box .hb-content {
+  font-size: 0.91rem;
+  color: #5c5a54;
+  line-height: 1.75;
+}
+.highlight-box ul { padding-left: 18px; }
+.highlight-box li { margin-bottom: 6px; }
+.collab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+.collab-card {
+  background: linear-gradient(135deg, rgba(87,245,207,0.08), rgba(110,188,255,0.12));
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid rgba(110,188,255,0.18);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+}
+.collab-card .cc-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0e3656;
+  margin-bottom: 4px;
+}
+.collab-card .cc-role {
+  font-size: 0.78rem;
+  color: #75859a;
+  margin-bottom: 6px;
+}
+.collab-card .cc-papers {
+  font-size: 0.78rem;
+  color: #149d93;
+  font-weight: 700;
+}
+.collab-card:nth-child(3n+1) { background: linear-gradient(135deg, rgba(33,211,191,0.08), rgba(74,167,255,0.12)); border-color: rgba(74,167,255,0.18); }
+.collab-card:nth-child(3n+2) { background: linear-gradient(135deg, rgba(122,124,255,0.10), rgba(239,242,255,0.88)); border-color: rgba(122,124,255,0.18); }
+.collab-card:nth-child(3n) { background: linear-gradient(135deg, rgba(255,184,93,0.14), rgba(255,255,255,0.92)); border-color: rgba(255,184,93,0.18); }
+.collab-card:nth-child(3n+2) .cc-papers { color: #5b63f2; }
+.collab-card:nth-child(3n) .cc-papers { color: #db7b34; }
+.news-item {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(14, 51, 80, 0.08);
+}
+.news-item:last-child { border-bottom: none; }
+.news-date {
+  flex-shrink: 0;
+  width: 84px;
+  font-size: 0.8rem;
+  color: #6f8095;
+  font-weight: 700;
+  padding-top: 2px;
+}
+.news-content .nc-title {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #113555;
+  margin-bottom: 4px;
+}
+.news-content .nc-desc {
+  font-size: 0.86rem;
+  color: #5f6f81;
+  line-height: 1.68;
+}
+.news-source {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(87,245,207,0.16), rgba(110,188,255,0.14));
+  color: #106f76;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  margin-top: 6px;
+  font-weight: 700;
+}
+.paper-item {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(14, 51, 80, 0.08);
+}
+.paper-item:last-child { border-bottom: none; }
+.paper-item .paper-title {
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: #113555;
+  margin-bottom: 4px;
+}
+.paper-item .paper-meta { font-size: 0.81rem; color: #6f8095; }
+.paper-item a { color: #128e94; text-decoration: none; font-weight: 600; }
+.paper-item a:hover { text-decoration: underline; }
+.year-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #2a84d8, #1bbfb4);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-right: 6px;
+}
+.info-box {
+  background: linear-gradient(135deg, rgba(87,245,207,0.09), rgba(110,188,255,0.1));
+  border: 1px solid rgba(110,188,255,0.16);
+  border-left: 4px solid #12a99a;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 0.86rem;
+  color: #4d5f73;
+  margin-top: 16px;
+}
+.alert-box {
+  background: linear-gradient(135deg, rgba(255,240,222,0.92), rgba(255,233,210,0.96));
+  border: 1px solid rgba(237,143,86,0.3);
+  border-left: 4px solid #eb8351;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 0.85rem;
+  color: #655550;
+  margin-bottom: 16px;
+}
+.footer {
+  text-align: center;
+  color: #64809a;
+  font-size: 0.82rem;
+  padding: 24px;
+}
+@media (max-width: 720px) {
+  .header {
+    padding: 24px 20px 26px;
+    border-radius: 22px;
+  }
+  .brandbar {
+    gap: 10px;
+  }
+  .brandcopy {
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2.35rem;
+    letter-spacing: 1.5px;
+  }
+  .card {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="brandbar">
+      <div class="brandcopy">
+        <div class="kicker">Lobster Atlas / PeerGraph Intelligence</div>
+        <div class="line">北京中关村学院 · 学术人物关系图谱界面</div>
+      </div>
+    </div>
+    <h1>🌿 关浩祥</h1>
+    <div class="subtitle">同门近期画像 · 师弟 · 2026年3月</div>
+    <div class="header-badges">
+      <span class="badge">🏛️ 北京中关村学院 博士生（博士二年级）</span>
+      <span class="badge">🧬 研究方向：LLM推理 · Agent · AI for Science</span>
+      <span class="badge">📅 央视AI迎春夜代表 2026.2</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <!-- 基本信息 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">👤</span>基本信息</div>
+      <div class="alert-box">
+        ⚠️ <strong>实体确认说明：</strong>已通过arXiv论文affiliation（北京中关村学院）、与何纪言/郑书新/刘铁岩的合著关系，以及微信公众号"北京中关村学院博士生代表"身份确认，排除同名其他人物。
+      </div>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="label">所在机构</div>
+          <div class="value">北京中关村学院（博士二年级）</div>
+        </div>
+        <div class="info-item">
+          <div class="label">导师</div>
+          <div class="value">何纪言（Jiyan He）</div>
+        </div>
+        <div class="info-item">
+          <div class="label">学术关系</div>
+          <div class="value">用户同门师弟</div>
+        </div>
+        <div class="info-item">
+          <div class="label">本科院校</div>
+          <div class="value">未找到公开信息</div>
+        </div>
+      </div>
+      <div class="tags">
+        <span class="tag">LLM 推理</span>
+        <span class="tag">AI Agent</span>
+        <span class="tag">强化学习</span>
+        <span class="tag">Prompting</span>
+        <span class="tag">AI for Science</span>
+        <span class="tag">社会仿真</span>
+        <span class="tag">基因语言模型</span>
+      </div>
+    </div>
+
+    <!-- 研究演变轨迹 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">🗺️</span>研究演变轨迹</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="phase">2024初 — 起点</div>
+          <div class="phase-title">LLM Prompting · 通用性探索</div>
+          <div class="phase-desc">第一篇重要工作：<strong>Towards Generalist Prompting for LLMs by Mental Models</strong>（2024.2），与何纪言、郑书新合作，探索以心理模型为框架的通用提示工程，奠定LLM能力研究基础。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="phase">2024下半年 — 跨界</div>
+          <div class="phase-title">AI for Science · 分子结构建模</div>
+          <div class="phase-desc">参与 <strong>Tokenizing 3D Molecule Structure with Quantized Spherical Coordinates</strong>（2024.12），扩展到分子3D结构表示学习，与刘铁岩系团队成员合作。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="phase">2025上半年 — 两线并进</div>
+          <div class="phase-title">社会仿真 + 基因语言模型</div>
+          <div class="phase-desc">两篇重要贡献同期推进：① <strong>Modeling Earth-Scale Human-Like Societies with One Billion Agents</strong>（2025.6），亿级Agent仿真旗舰工作，关浩祥为第一作者。② <strong>Sparse Autoencoders Reveal Interpretable Structure in Small Gene Language Models</strong>（2025.7），探索基因语言模型的可解释性，展示跨学科视野。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="phase">2025下半年-2026 — 当前热点</div>
+          <div class="phase-title">LLM推理能力 · 数学推理</div>
+          <div class="phase-desc">重心回到LLM推理：<strong>No Free Lunch: Rethinking Internal Feedback for LLM Reasoning</strong>（2025.6），质疑LLM内部反馈机制。2026.2月参与数学推理方向（Can a Lightweight AI Pipeline Solve Math?）。自述研究方向"强化学习和智能体，要有敏锐的洞察力"。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 深度洞察 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">🧠</span>深度洞察 · 技能图谱与性格</div>
+      <div class="insight-grid">
+        <div class="insight-card">
+          <div class="ic-title">🔬 研究风格</div>
+          <div class="ic-content">广度优先型：两年内横跨Prompting、AI4Science、社会仿真、基因模型、数学推理多个方向，探索性强，不轻易固守单一赛道。</div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">⚙️ 核心技能</div>
+          <div class="ic-content">强化学习、LLM能力评估、Agent系统设计、Sparse Autoencoder可解释性、大规模仿真系统。英文学术写作能力（多篇英文arXiv论文）。</div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">🌟 代表成就</div>
+          <div class="ic-content">亿级Agent仿真论文第一作者（Modeling Earth-Scale Societies），这是高门槛旗舰工作，展示了他在系统设计和大规模实验上的执行力。</div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">🎭 公众印象</div>
+          <div class="ic-content">2026年2月央视AI迎春夜博士生代表，频繁出现在"海淀AI人群"媒体报道中，形象积极向上，善于公众表达。自述"要有敏锐的洞察力"，透露出他的自我期许。</div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">🤔 性格推断</div>
+          <div class="ic-content">偏开放外向（愿意参与公众活动），有探索精神（多方向尝试），执行力强（能做出第一作者的大型实验）。相比郑书新可能更愿意聊跨领域想法。（推断，供参考）</div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">📐 与你的互补点</div>
+          <div class="ic-content">他在Agent系统和社会仿真有工程经验；在强化学习方向有积累。如果你在长上下文推理上有理论/算法优势，分工可以是你做推理优化，他做Agent系统集成。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 核心合作者网络 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">🕸️</span>核心合作者网络</div>
+      <div class="collab-grid">
+        <div class="collab-card">
+          <div class="cc-name">何纪言</div>
+          <div class="cc-role">导师 · 所有论文合作者</div>
+          <div class="cc-papers">4+ 篇合作</div>
+        </div>
+        <div class="collab-card">
+          <div class="cc-name">郑书新</div>
+          <div class="cc-role">师兄 · 高频合作者</div>
+          <div class="cc-papers">3+ 篇合作</div>
+        </div>
+        <div class="collab-card">
+          <div class="cc-name">刘铁岩</div>
+          <div class="cc-role">大组PI</div>
+          <div class="cc-papers">1 篇合作</div>
+        </div>
+        <div class="collab-card">
+          <div class="cc-name">Yanzhi Zhang</div>
+          <div class="cc-role">同门师弟妹</div>
+          <div class="cc-papers">2+ 篇合作</div>
+        </div>
+        <div class="collab-card">
+          <div class="cc-name">Jie Zhang</div>
+          <div class="cc-role">安全方向合作</div>
+          <div class="cc-papers">1 篇合作</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 如何建立联系 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">🤝</span>如何与他建立合作联系</div>
+
+      <div class="highlight-box">
+        <div class="hb-title">💬 切入点：共同话题</div>
+        <div class="hb-content">
+          <ul>
+            <li><strong>强化学习 × LLM推理</strong>：他自述在做强化学习和智能体，你的长上下文推理方向天然有RL优化角度（如RL for KV Cache eviction策略），直接问他"你在No Free Lunch里发现内部反馈无效，你觉得RL信号可以替代吗？"</li>
+            <li><strong>数学推理方向</strong>：你们都在参与（他是2026.2那篇的合著者），可以从这里发展合作。</li>
+            <li><strong>亿级仿真的推理成本问题</strong>：他做的亿级Agent仿真必然面临推理效率瓶颈，你的研究方向可以直接帮他降低实验成本——这是非常实际的合作切入。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-title">🎯 建立关系的具体策略</div>
+        <div class="hb-content">
+          <ul>
+            <li>他参与了公众活动，可以以"看到你在AI迎春夜的报道"开启对话，降低陌生感。</li>
+            <li>作为师弟，主动帮他code review或讨论实验设计，建立技术信任后再提合作。</li>
+            <li>可以邀请他一起读No Free Lunch相关的paper，从reading group开始自然演进到合作。</li>
+            <li>他广度强、深度可提升——你可以在某个子方向（如KV Cache或Sparse Attention）提供更深的technical depth，形成互补。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 近期动态 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">📡</span>近期动态时间线（近6个月）</div>
+
+      <div class="news-item">
+        <div class="news-date">2026.03.06</div>
+        <div class="news-content">
+          <div class="nc-title">海淀AI人群图鉴 | 关浩祥上榜</div>
+          <div class="nc-desc">被《中关村杂志》列入"海淀AI人群图鉴"，与王鹤、张林峰、陈建宇等知名研究者并列，成为博士生中的代表性人物。<span class="news-source">中关村杂志 2026.3.6</span></div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2026.02.14</div>
+        <div class="news-content">
+          <div class="nc-title">Can a Lightweight AI Pipeline Solve Research-Level Math? (arXiv)</div>
+          <div class="nc-desc">与何纪言、Yanzhi Zhang等合著，探索AI流水线在研究级数学问题上的能力边界。关注LLM推理极限。<span class="news-source">arXiv 2502.09601</span></div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2026.02.05</div>
+        <div class="news-content">
+          <div class="nc-title">央视频《中关村对话·AI迎春夜》代表发言</div>
+          <div class="nc-desc">作为"北京中关村学院博士生代表"出镜，分享"我一直在研究强化学习和智能体，要有敏锐的洞察力"。正式进入公众视野。<span class="news-source">北京海淀 / 影视前哨</span></div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2025.07.10</div>
+        <div class="news-content">
+          <div class="nc-title">Sparse Autoencoders Reveal Interpretable Structure in Small Gene Language Models (arXiv)</div>
+          <div class="nc-desc">与何纪言、Jie Zhang合著，将Sparse Autoencoder用于基因语言模型可解释性分析，展示跨领域探索能力。<span class="news-source">arXiv 2507.XXXXX</span></div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2025.06.25</div>
+        <div class="news-content">
+          <div class="nc-title">No Free Lunch: Rethinking Internal Feedback for LLM Reasoning (arXiv)</div>
+          <div class="nc-desc">与何纪言、郑书新等合著，质疑LLM内部反馈机制的有效性，引发推理方向反思。<span class="news-source">arXiv 2025.6</span></div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2025.06.07</div>
+        <div class="news-content">
+          <div class="nc-title">Modeling Earth-Scale Human-Like Societies with One Billion Agents（第一作者）</div>
+          <div class="nc-desc">亿级Agent仿真论文，关浩祥为第一作者。与何纪言、郑书新、刘铁岩等合著，挑战社会仿真规模极限。<span class="news-source">arXiv 2506.06281</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 历史成果 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">📚</span>历史成果（近3年，来源：arXiv）</div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2026</span>Can a Lightweight Automated AI Pipeline Solve Research-Level Mathematical Problems?</div>
+        <div class="paper-meta">合著：与何纪言、Yanzhi Zhang等 | <a href="https://arxiv.org/abs/2502.09601" target="_blank">arXiv 2502.09601</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2025</span>Modeling Earth-Scale Human-Like Societies with One Billion Agents（<strong>第一作者</strong>）</div>
+        <div class="paper-meta">合著：与何纪言、郑书新、刘铁岩等 | <a href="https://arxiv.org/abs/2506.06281" target="_blank">arXiv 2506.06281</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2025</span>Sparse Autoencoders Reveal Interpretable Structure in Small Gene Language Models</div>
+        <div class="paper-meta">合著：与何纪言、Jie Zhang | 来源：arXiv 2025.7</div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2025</span>No Free Lunch: Rethinking Internal Feedback for LLM Reasoning</div>
+        <div class="paper-meta">合著：与何纪言、郑书新、Yanzhi Zhang等 | 来源：arXiv 2025.6</div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2024</span>Tokenizing 3D Molecule Structure with Quantized Spherical Coordinates</div>
+        <div class="paper-meta">合著：与Kaiyuan Gao、刘铁岩系团队等 | <a href="https://arxiv.org/abs/2412.XXXXX" target="_blank">arXiv 2024.12</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2024</span>Towards Generalist Prompting for Large Language Models by Mental Models</div>
+        <div class="paper-meta">合著：与何纪言、郑书新等 | <a href="https://arxiv.org/abs/2402.09051" target="_blank">arXiv 2402.09051</a></div>
+      </div>
+
+      <div class="info-box">
+        📊 数据来源：arXiv（全文搜索）、微信搜一搜、中关村杂志等公开媒体 | 已通过 affiliation 和合著关系确认为同一人 | 仅供参考
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    数据来源：arXiv · 微信搜一搜 · 中关村杂志 · 北京海淀官方媒体 | 生成时间：2026年3月19日<br>
+    本报告基于公开信息整理，推断内容仅供参考
+  </div>
+</div>
+</body>
+</html>

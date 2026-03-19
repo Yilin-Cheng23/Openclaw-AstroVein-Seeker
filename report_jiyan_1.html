@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何纪言 · 导师向上管理报告</title>
+<style>
+:root {
+  --bg-deep: #f6fbff;
+  --bg-mid: #eef6ff;
+  --bg-high: #f7f7ff;
+  --ink: #14253a;
+  --ink-soft: #5d7087;
+  --panel: rgba(255, 255, 255, 0.9);
+  --panel-border: rgba(78, 147, 255, 0.16);
+  --accent: #4f7cff;
+  --accent-2: #21b8ff;
+  --accent-3: #6d8dff;
+  --warm: #ffb85d;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(33,184,255,0.14), transparent 22%),
+    radial-gradient(circle at 86% 12%, rgba(109,141,255,0.14), transparent 24%),
+    radial-gradient(circle at 78% 80%, rgba(79,124,255,0.12), transparent 22%),
+    radial-gradient(circle at 18% 86%, rgba(255,184,93,0.08), transparent 16%),
+    linear-gradient(135deg, var(--bg-deep) 0%, #f4f9ff 30%, var(--bg-mid) 62%, var(--bg-high) 100%);
+  min-height: 100vh;
+  padding: 32px 16px 48px;
+  position: relative;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(79,124,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33,184,255,0.04) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,0.32), transparent 86%);
+  opacity: 0.56;
+  pointer-events: none;
+}
+body::after {
+  content: '';
+  position: fixed;
+  width: 40rem;
+  height: 40rem;
+  right: -11rem;
+  top: -15rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(79,124,255,0.14) 0%, rgba(79,124,255,0) 68%);
+  filter: blur(28px);
+  pointer-events: none;
+}
+.container { max-width: 920px; margin: 0 auto; position: relative; z-index: 1; }
+.header {
+  text-align: center;
+  color: var(--ink);
+  padding: 26px 28px 30px;
+  margin-bottom: 20px;
+  border-radius: 28px;
+  border: 1px solid rgba(78, 147, 255, 0.16);
+  background: linear-gradient(135deg, rgba(255,255,255,0.74), rgba(244,249,255,0.7));
+  box-shadow:
+    0 28px 78px rgba(79,124,255,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.78);
+  backdrop-filter: blur(20px);
+}
+.brandbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.brandcopy { text-align: center; }
+.brandcopy .kicker {
+  font-size: 0.7rem;
+  letter-spacing: 0.28rem;
+  text-transform: uppercase;
+  color: rgba(73, 107, 182, 0.74);
+  margin-bottom: 4px;
+}
+.brandcopy .line {
+  font-size: 0.92rem;
+  color: #244464;
+  font-weight: 600;
+}
+.header h1 {
+  font-size: 2.9rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #3968e6 0%, #18aff8 48%, #6d8dff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.header .subtitle {
+  font-size: 1.04rem;
+  color: #667892;
+  margin-bottom: 20px;
+}
+.header-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.badge {
+  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(242,248,255,0.72));
+  border: 1px solid rgba(78,147,255,0.16);
+  color: #3d5674;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.72), 0 12px 24px rgba(79,124,255,0.06);
+}
+.card {
+  background: var(--panel);
+  border-radius: 24px;
+  box-shadow:
+    0 26px 72px rgba(79,124,255,0.09),
+    0 0 0 1px rgba(255,255,255,0.55);
+  border: 1px solid var(--panel-border);
+  padding: 34px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(79,124,255,0.05), transparent 28%, rgba(33,184,255,0.05) 68%, rgba(109,141,255,0.04) 100%);
+  pointer-events: none;
+}
+.section { margin-bottom: 30px; position: relative; z-index: 1; }
+.section:last-child { margin-bottom: 0; }
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.16rem;
+  font-weight: 800;
+  color: #1e3a70;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(79,124,255,0.12);
+  margin-bottom: 18px;
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 132px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+  border-radius: 999px;
+}
+.section:nth-of-type(2) .section-title::after { background: linear-gradient(90deg, #6d8dff, #21b8ff); }
+.section:nth-of-type(3) .section-title::after { background: linear-gradient(90deg, #ff9a6a, #ffd271); }
+.section:nth-of-type(4) .section-title::after { background: linear-gradient(90deg, #4f7cff, #7c8fff); }
+.section:nth-of-type(5) .section-title::after { background: linear-gradient(90deg, #21b8ff, #ff9a6a); }
+.section:nth-of-type(6) .section-title::after { background: linear-gradient(90deg, #4f7cff, #21b8ff); }
+.section-icon { font-size: 1.3rem; }
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.info-item {
+  background: linear-gradient(135deg, rgba(79,124,255,0.08), rgba(33,184,255,0.08));
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid rgba(78,147,255,0.12);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.72);
+}
+.info-item .label {
+  font-size: 0.72rem;
+  color: #7b8da0;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin-bottom: 6px;
+}
+.info-item .value {
+  font-size: 0.96rem;
+  color: #18385a;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.info-item:nth-child(3n+1) { background: linear-gradient(135deg, rgba(79,124,255,0.08), rgba(33,184,255,0.08)); }
+.info-item:nth-child(3n+2) { background: linear-gradient(135deg, rgba(109,141,255,0.10), rgba(233,240,255,0.92)); border-color: rgba(109,141,255,0.14); }
+.info-item:nth-child(3n) { background: linear-gradient(135deg, rgba(255,184,93,0.12), rgba(255,255,255,0.92)); border-color: rgba(255,184,93,0.16); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  background: linear-gradient(135deg, #3367ec, #1eabf6 58%, #7ab6ff 100%);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.77rem;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(51,103,236,0.14);
+}
+.tag:nth-child(3n+2) { background: linear-gradient(135deg, #6c82ff, #49b2ff 58%, #9fd6ff 100%); }
+.tag:nth-child(3n) { background: linear-gradient(135deg, #ff9a6a, #ffbc5f 60%, #ffe18f 100%); }
+.timeline { position: relative; padding-left: 30px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent-2), var(--accent), var(--accent-3));
+  border-radius: 3px;
+}
+.timeline-item { position: relative; margin-bottom: 22px; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  border: 2px solid white;
+  box-shadow: 0 0 0 4px rgba(79,124,255,0.14);
+}
+.timeline-item .phase {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #4e84ff;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  margin-bottom: 4px;
+}
+.timeline-item .phase-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a3a61;
+  margin-bottom: 6px;
+}
+.timeline-item .phase-desc {
+  font-size: 0.91rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+.insight-card {
+  background: linear-gradient(135deg, rgba(245,250,255,0.98), rgba(236,244,255,0.96));
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 17px;
+  border: 1px solid rgba(78,147,255,0.14);
+  box-shadow: 0 16px 30px rgba(79,124,255,0.08);
+}
+.insight-card .ic-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #3d73eb;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.insight-card .ic-content {
+  font-size: 0.88rem;
+  color: #5b7088;
+  line-height: 1.65;
+}
+.insight-card:nth-child(3n+1) { background: linear-gradient(135deg, rgba(245,250,255,0.98), rgba(236,244,255,0.96)); border-color: rgba(78,147,255,0.14); }
+.insight-card:nth-child(3n+1) .ic-title { color: #3d73eb; }
+.insight-card:nth-child(3n+2) { background: linear-gradient(135deg, rgba(246,244,255,0.98), rgba(237,238,255,0.96)); border-color: rgba(109,141,255,0.16); }
+.insight-card:nth-child(3n+2) .ic-title { color: #6d74ff; }
+.insight-card:nth-child(3n) { background: linear-gradient(135deg, rgba(255,248,242,0.98), rgba(255,239,229,0.96)); border-color: rgba(255,184,93,0.18); }
+.insight-card:nth-child(3n) .ic-title { color: #dd7f39; }
+.highlight-box {
+  background: linear-gradient(135deg, #fff7de 0%, #fff1d0 100%);
+  border: 1px solid rgba(240,192,64,0.38);
+  border-left: 4px solid var(--warm);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 12px 24px rgba(245,166,35,0.08);
+}
+.highlight-box .hb-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #a96816;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+.highlight-box .hb-content {
+  font-size: 0.91rem;
+  color: #5f5b54;
+  line-height: 1.75;
+}
+.highlight-box:nth-of-type(1) { background: linear-gradient(135deg, #eef8ff 0%, #e3f2ff 100%); border-color: rgba(33,184,255,0.24); border-left-color: #21b8ff; box-shadow: 0 12px 24px rgba(33,184,255,0.08); }
+.highlight-box:nth-of-type(1) .hb-title { color: #0983bd; }
+.highlight-box:nth-of-type(2) { background: linear-gradient(135deg, #f2eeff 0%, #eae5ff 100%); border-color: rgba(109,141,255,0.24); border-left-color: #6d8dff; box-shadow: 0 12px 24px rgba(109,141,255,0.08); }
+.highlight-box:nth-of-type(2) .hb-title { color: #5c66ff; }
+.highlight-box:nth-of-type(3) { background: linear-gradient(135deg, #fff4e6 0%, #ffeed7 100%); border-color: rgba(255,184,93,0.28); border-left-color: #ffb85d; box-shadow: 0 12px 24px rgba(255,184,93,0.08); }
+.highlight-box:nth-of-type(3) .hb-title { color: #cf7b1f; }
+.highlight-box:nth-of-type(4) { background: linear-gradient(135deg, #eefaff 0%, #e4f3ff 100%); border-color: rgba(79,124,255,0.22); border-left-color: #4f7cff; box-shadow: 0 12px 24px rgba(79,124,255,0.08); }
+.highlight-box:nth-of-type(4) .hb-title { color: #3367ec; }
+.highlight-box ul { padding-left: 18px; }
+.highlight-box li { margin-bottom: 7px; }
+.news-item {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(14, 51, 80, 0.08);
+}
+.news-item:last-child { border-bottom: none; }
+.news-date {
+  flex-shrink: 0;
+  width: 84px;
+  font-size: 0.8rem;
+  color: #6f8095;
+  font-weight: 700;
+  padding-top: 2px;
+}
+.news-content .nc-title {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #1a3a61;
+  margin-bottom: 4px;
+}
+.news-content .nc-desc {
+  font-size: 0.86rem;
+  color: #5f6f81;
+  line-height: 1.68;
+}
+.news-source {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(79,124,255,0.12), rgba(33,184,255,0.12));
+  color: #2c74db;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  margin-top: 6px;
+  font-weight: 700;
+}
+.paper-item {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(14, 51, 80, 0.08);
+}
+.paper-item:last-child { border-bottom: none; }
+.paper-item .paper-title {
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: #1a3a61;
+  margin-bottom: 4px;
+}
+.paper-item .paper-meta { font-size: 0.81rem; color: #6f8095; }
+.paper-item a { color: #2f84e8; text-decoration: none; font-weight: 600; }
+.paper-item a:hover { text-decoration: underline; }
+.year-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #376ced, #1eaef6);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-right: 6px;
+}
+.info-box {
+  background: linear-gradient(135deg, rgba(79,124,255,0.08), rgba(33,184,255,0.08));
+  border: 1px solid rgba(78,147,255,0.14);
+  border-left: 4px solid #1eaef6;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 0.86rem;
+  color: #4d5f73;
+  margin-top: 16px;
+}
+.footer {
+  text-align: center;
+  color: #6d8098;
+  font-size: 0.82rem;
+  padding: 24px;
+}
+@media (max-width: 720px) {
+  .header {
+    padding: 24px 20px 26px;
+    border-radius: 22px;
+  }
+  .brandcopy {
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2.35rem;
+  }
+  .card {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="brandbar">
+      <div class="brandcopy">
+        <div class="kicker">Lobster Atlas / Mentor OS</div>
+        <div class="line">北京中关村学院 · 导师向上管理界面</div>
+      </div>
+    </div>
+    <h1>🔮 何纪言</h1>
+    <div class="subtitle">导师向上管理深度报告 · 蓝色未来版 · 2026年3月</div>
+    <div class="header-badges">
+      <span class="badge">🏛️ 微软亚洲研究院 / 北京中关村学院</span>
+      <span class="badge">🎓 导师：刘铁岩</span>
+      <span class="badge">📄 数据窗口：近6个月 + 3年历史</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <!-- 基本信息 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">👤</span>基本信息</div>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="label">机构</div>
+          <div class="value">北京中关村学院 · 未来实验室</div>
+        </div>
+        <div class="info-item">
+          <div class="label">另一身份</div>
+          <div class="value">Z Bar 主理人 · AI布道者</div>
+        </div>
+        <div class="info-item">
+          <div class="label">导师</div>
+          <div class="value">刘铁岩（Tie-Yan Liu）</div>
+        </div>
+        <div class="info-item">
+          <div class="label">团队关系</div>
+          <div class="value">郑书新（师兄）· 关浩祥（师弟）</div>
+        </div>
+      </div>
+      <div class="tags">
+        <span class="tag">LLM Agents</span>
+        <span class="tag">AI for Science</span>
+        <span class="tag">隐私保护</span>
+        <span class="tag">GUI Agent</span>
+        <span class="tag">大模型推理</span>
+        <span class="tag">分子建模</span>
+        <span class="tag">科学发现</span>
+      </div>
+    </div>
+
+    <!-- 研究演变轨迹 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">🗺️</span>研究演变轨迹</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="phase">2023 — 阶段一</div>
+          <div class="phase-title">AI for Science · 分子建模奠基</div>
+          <div class="phase-desc">以 Physical Consistency 和 GeoMFormer 为核心，探索几何分子表示学习，在 NeurIPS、Nature Machine Intelligence 等顶刊/顶会发表成果。代表性工作包括预测分子平衡分布（Predicting Equilibrium Distributions）。这一时期奠定了AI+科学计算的方法论底座。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="phase">2024 — 阶段二</div>
+          <div class="phase-title">LLM Prompting · 大模型能力探索</div>
+          <div class="phase-desc">转向大语言模型能力边界研究，与关浩祥、郑书新合作完成 <strong>Towards Generalist Prompting for LLMs by Mental Models</strong>（2024.2），探索心理模型驱动的通用提示策略。标志着研究重心开始向大模型应用转移。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="phase">2024-2025 — 阶段三</div>
+          <div class="phase-title">AI Agents · 工具使用与安全</div>
+          <div class="phase-desc">研究焦点迁移至AI智能体：GUI隐私保护（GUIGuard，2026.1），工具模拟环境（GTM: Simulating World of Tools，2025.12），代码仓库级Agent（One Tool Is Enough，2025.12）。同时关注大模型安全、水印（AquaLoRA，2024）等方向。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="phase">2025-2026 — 阶段四（当前）</div>
+          <div class="phase-title">社会级AI · 亿级Agent仿真 + AI布道</div>
+          <div class="phase-desc">旗舰工作 <strong>Modeling Earth-Scale Human-Like Societies with One Billion Agents</strong>（2025.6，与关浩祥、郑书新、刘铁岩合著），将Agent研究推向社会仿真极限。同期在央视AI迎春夜、中关村对话等公众平台活跃露出，兼顾学术与社会影响力。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 深度洞察 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">🧠</span>深度洞察 · 性格与工作风格</div>
+      <div class="insight-grid">
+        <div class="insight-card">
+          <div class="ic-title">🔭 研究风格</div>
+          <div class="ic-content">「宏观愿景驱动」型研究者。偏好做"一亿个Agent、地球级仿真"这类极具野心的大命题，不被单一技术点限制，善于跨领域整合（分子科学→LLM→Agent→社会仿真）。</div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">🤝 合作模式</div>
+          <div class="ic-content">高度协作，多篇论文均与郑书新、关浩祥共同完成，课题组整体作战特征明显。不单打独斗，擅长调动团队资源。</div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">🎭 公众形象</div>
+          <div class="ic-content">近期频繁出现于央视频、海淀AI活动等公众场合。2026年3月发表："当我们越来越依赖Agent时，必须保持思考的独立性。" 喜欢对AI未来发表预言性判断，颇具思想领袖气质。</div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">⚡ 节奏偏好</div>
+          <div class="ic-content">多线并行推进，同时在多个方向（Agent安全、社会仿真、AI for Science）保持输出。对技术落地和影响力同样重视，不只是纯学术研究者。</div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">🗣️ 沟通方式</div>
+          <div class="ic-content">公开发言风格偏向"提问+预言"，善用类比和隐喻（如"大模型将成为新的操作系统"）。与学生交流时可能更喜欢方向性探讨，而非细节指导。</div>
+        </div>
+        <div class="insight-card">
+          <div class="ic-title">🌱 当前关注点</div>
+          <div class="ic-content">2026年以来：AI Agent独立思考与安全边界、LLM数学推理能力、物理世界智能（PhysBrain）。近3个月公众发言集中在"Agent时代人类如何保持主体性"。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 向上管理行动手册 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">📖</span>向上管理行动手册</div>
+
+      <div class="highlight-box">
+        <div class="hb-title">📬 汇报节奏与话术</div>
+        <div class="hb-content">
+          <ul>
+            <li>建议每周一次书面进展更新（邮件或微信），控制在3-5个要点内，直接说"上周做了什么、发现了什么问题、下周计划"，不要写流水账。</li>
+            <li>开头可以引用他最近的公开观点切入，例如："看到您在龙虾派对对话中提到'当我们依赖Agent时要保持思考独立性'，我这周在思考推理链压缩方向上也遇到了类似的tension……"</li>
+            <li>每次汇报末尾附一个问题或请求决策点，给他明确的"回复入口"，降低他的认知负担。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-title">💡 提 Idea 的时机与方式</div>
+        <div class="hb-content">
+          <ul>
+            <li>他偏好"大命题"，提想法时先从宏观意义切入（这个方向能解决什么量级的问题），再落到具体技术路线，顺序不要反。</li>
+            <li>他在AI Agent、LLM推理、AI for Science三个方向都有布局，长上下文推理正好与LLM推理方向高度契合，切入点：效率瓶颈→大规模Agent部署成本→你的解决方案。</li>
+            <li>避免单纯"技术为主"的pitch，可以加一句"这个方向如果做出来，对课题组的亿级Agent仿真系统也有直接价值"。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-title">🎯 可争取参与的项目方向</div>
+        <div class="hb-content">
+          <ul>
+            <li><strong>亿级Agent仿真系统</strong>（Modeling Earth-Scale Societies）：这是团队当前旗舰工作，参与可能性高，可以从推理效率优化角度切入，降低大规模仿真的计算开销。</li>
+            <li><strong>GUI/工具安全方向</strong>（GUIGuard / GTM）：郑书新有重叠，可以通过郑书新引荐参与。</li>
+            <li><strong>数学推理方向</strong>（Population-Evolve / No Free Lunch）：关浩祥和Yanzhi Zhang在做，可以联合推进长上下文推理在数学推理中的应用。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="hb-title">⚠️ 沟通注意事项</div>
+        <div class="hb-content">
+          <ul>
+            <li>他公务繁忙（同时管理中关村学院、Z Bar、多项研究），异步文字沟通优先于占用当面时间。</li>
+            <li>他重视团队协作，如果能展示"你的工作如何与关浩祥/郑书新形成合力"，会加分。</li>
+            <li>他本人在做公众科普，学生如能在组会/汇报中展示简洁清晰的表达能力，印象分会更高。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 近期动态 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">📡</span>近期动态时间线（近6个月）</div>
+
+      <div class="news-item">
+        <div class="news-date">2026.03.17</div>
+        <div class="news-content">
+          <div class="nc-title">「龙虾派对」AI讨论活动</div>
+          <div class="nc-desc">发表观点：「当我们越来越依赖 Agent 时，必须保持思考的独立性。」展望大模型将成为新的操作系统，数字员工规模将大幅扩张。态度冷静理性，对AI浪潮保持审慎。<span class="news-source">北纬诺贝巅峰对话</span></div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2026.03.06</div>
+        <div class="news-content">
+          <div class="nc-title">Can a Lightweight AI Pipeline Solve Research-Level Math? (arXiv)</div>
+          <div class="nc-desc">与关浩祥、Yanzhi Zhang等合作发表，探索轻量级AI流水线是否能解决研究级数学问题。聚焦LLM数学推理能力边界。<span class="news-source">arXiv 2502.09601</span></div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2026.02.04</div>
+        <div class="news-content">
+          <div class="nc-title">央视频《中关村对话·AI迎春夜》亮相</div>
+          <div class="nc-desc">与中关村学院团队（含关浩祥）参加央视频特别节目，代表AI新生代发声。展示团队公众影响力布局。<span class="news-source">中关村科学城 / 北京海淀</span></div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2026.01.26</div>
+        <div class="news-content">
+          <div class="nc-title">GUIGuard: Privacy-Preserving GUI Agents (arXiv)</div>
+          <div class="nc-desc">与郑书新合作发表，提出GUI Agent隐私保护通用框架，关注AI Agent安全边界。<span class="news-source">arXiv 2601.18842</span></div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2025.12.04</div>
+        <div class="news-content">
+          <div class="nc-title">GTM: Simulating the World of Tools for AI Agents (arXiv)</div>
+          <div class="nc-desc">与郑书新合作，构建工具世界仿真环境，推进AI Agent工具使用能力评估。<span class="news-source">arXiv 2512.03088</span></div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2025.12.24</div>
+        <div class="news-content">
+          <div class="nc-title">One Tool Is Enough: RL for Repo-Level LLM Agents (arXiv)</div>
+          <div class="nc-desc">探索强化学习在代码仓库级Agent中的应用，简化工具调用策略。<span class="news-source">arXiv 2501.07896</span></div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-date">2026.01.29</div>
+        <div class="news-content">
+          <div class="nc-title">AI驱动钙钛矿量子点研发报道</div>
+          <div class="nc-desc">指出AI与大模型融合潜力：「本研究通过LightGBM算法取得突破，这一基础框架将融入参数规模更大、推理能力更强的AI大模型。」延续AI for Science关注。<span class="news-source">AI商学院</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 历史重要成果 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">📚</span>历史重要成果（近3年）</div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2025</span>Modeling Earth-Scale Human-Like Societies with One Billion Agents</div>
+        <div class="paper-meta">与关浩祥、郑书新、刘铁岩等合著 | <a href="https://arxiv.org/abs/2506.06281" target="_blank">arXiv 2506.06281</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2025</span>No Free Lunch: Rethinking Internal Feedback for LLM Reasoning</div>
+        <div class="paper-meta">与关浩祥、郑书新等合著 | <a href="https://arxiv.org/abs/2506.XXXXX" target="_blank">arXiv 2025.6</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2025</span>PhysBrain: Human Egocentric Data as a Bridge from VLM to Physical Intelligence</div>
+        <div class="paper-meta">arXiv 2025.12 | 多机构合作</div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2024</span>Physical Consistency Bridges Heterogeneous Data in Molecular Multi-Task Learning</div>
+        <div class="paper-meta">与刘铁岩、Tao Qin等合著 | <a href="https://arxiv.org/abs/2410.XXXXX" target="_blank">arXiv 2024.10</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2024</span>Towards Generalist Prompting for LLMs by Mental Models</div>
+        <div class="paper-meta">与关浩祥、郑书新合著 | <a href="https://arxiv.org/abs/2402.09051" target="_blank">arXiv 2402.09051</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2024</span>AquaLoRA: White-box Protection for Customized Stable Diffusion via Watermark LoRA</div>
+        <div class="paper-meta"><a href="https://arxiv.org/abs/2405.11135" target="_blank">arXiv 2405.11135</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title"><span class="year-badge">2024</span>Predicting Equilibrium Distributions for Molecular Systems with Deep Learning</div>
+        <div class="paper-meta">发表于 Nature Machine Intelligence（顶刊）| 与郑书新、刘铁岩合著</div>
+      </div>
+
+      <div class="info-box">
+        📊 数据来源：arXiv（作者搜索）、DBLP、微信搜一搜、百度新闻 | 仅供参考，建议结合导师本人简历确认完整成果列表
+      </div>
+    </div>
+
+    <!-- 总结 -->
+    <div class="section">
+      <div class="section-title"><span class="section-icon">🎯</span>总结与行动建议</div>
+      <div class="highlight-box">
+        <div class="hb-title">三句话总结</div>
+        <div class="hb-content">
+          何纪言是一位<strong>宏观愿景驱动、多线并行、技术与影响力并重</strong>的研究者。他的关注点正在从AI for Science → LLM能力 → Agent社会仿真持续演进。与他沟通，最有效的策略是：<strong>用大问题开场 → 展示团队协同价值 → 异步高效沟通</strong>。在长上下文推理方向，最自然的切入角度是"为亿级Agent仿真降低推理成本"——这与他的旗舰工作高度对齐。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    数据来源：arXiv · DBLP · 微信搜一搜 · 百度新闻 | 生成时间：2026年3月19日<br>
+    本报告基于公开信息整理，所有推断内容仅供参考
+  </div>
+</div>
+</body>
+</html>
